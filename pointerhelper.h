@@ -10,7 +10,8 @@ extern "C" {
 class pointerhelper
 {
     public:
-        int*get_rand_arr();
+        int get_length();
+        int*get_rand_arr(int);
         int**sort_ptr_adr();
 };
 

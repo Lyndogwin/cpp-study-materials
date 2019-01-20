@@ -5,10 +5,14 @@
 #include "pointerhelper.h"
 using namespace std;
 
-int* pointerhelper :: get_rand_arr(){
+int pointerhelper:: get_length(){
     int input;
     cout<<"How many numbers would you like?(enter integer)";
     cin>>input;
+    return input;
+};
+
+int* pointerhelper :: get_rand_arr(int input){
     const int length = input;
     int arr[length];
     for(int i = 0; i < length; i++){
@@ -17,15 +21,28 @@ int* pointerhelper :: get_rand_arr(){
         srand(time(0));
         arr[i] = 1 + (rand() % 5); 
     }
+    for(int i = 0; i < length; i++){
+        cout<<arr[i]<<" ";
+    }
     return arr;
-}
+};
 
 int**pointerhelper :: sort_ptr_adr(){
-    int *arr; 
-    arr = get_rand_arr();
-    const int length = sizeof(arr)/sizeof(int); //test to see if works
-    static int * ptrs[length];
+    const int length = get_length();
     
+    int arr[length];
+    int* arr_ptr = get_rand_arr(length);
+    // const int length = sizeof(arr)/sizeof(int); //test to see if works
+    
+    // check arr for values
+    cout<<"print arr: ";
+    for(int i = 0; i < length; i++){
+        arr[i] = arr_ptr[i];
+    }
+    cout<<endl;
+    
+    int * ptrs[length];
+    /*
     for(int i = 0; i < length; i++){
         ptrs[i] = &arr[i];
     }
@@ -42,6 +59,6 @@ int**pointerhelper :: sort_ptr_adr(){
                 }
             }  
         }
-    }
+    }*/
     return ptrs;
-}
+};
