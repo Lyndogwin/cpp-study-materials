@@ -18,7 +18,7 @@ int* pointerhelper :: get_rand_arr(int input){
     for(int i = 0; i < length; i++){
         // adds a random number 1 through 6
         // to the arr at index i
-        srand(time(0));
+        //srand(time(0));
         arr[i] = 1 + (rand() % 5); 
     }
     for(int i = 0; i < length; i++){
