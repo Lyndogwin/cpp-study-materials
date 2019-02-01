@@ -2,7 +2,7 @@
 #include<iostream>
 #include<cstdlib>
 #include<ctime>
-#include "pointerhelper.h"
+#include "helper.h"
 using namespace std;
 
 int pointerhelper:: get_length(){
